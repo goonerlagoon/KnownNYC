@@ -1,0 +1,34 @@
+{
+  "boroughs": [
+    {
+      "borough": "M",
+      "shortName": "Manhattan",
+      "fullName": "Borough of Manhattan",
+      "imageFilename": "manhattan"
+    },
+    {
+      "borough": "X",
+      "shortName": "The Bronx",
+      "fullName": "Borough of the Bronx",
+      "imageFilename": "bronx"
+    },
+    {
+      "borough": "Q",
+      "shortName": "Queens",
+      "fullName": "Borough of Queens",
+      "imageFilename": "queens"
+    },
+    {
+      "borough": "B",
+      "shortName": "Brooklyn",
+      "fullName": "Borough of Brooklyn",
+      "imageFilename": "brooklyn"
+    },
+    {
+      "borough": "R",
+      "shortName": "Staten Island",
+      "fullName": "Borough of Staten Island",
+      "imageFilename": "staten_island"
+    }
+  ]
+}
