@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class BoroughViewModel : ViewModel(){
+class BoroughViewModel : ViewModel() {
     private val _state = MutableStateFlow(BoroughsUIState())
     val state = _state.asStateFlow()
 
@@ -18,7 +18,7 @@ class BoroughViewModel : ViewModel(){
 
     private fun getBorough() {
         viewModelScope.launch {
-            //load the data
+            //load the data from a repo
         }
     }
 }
