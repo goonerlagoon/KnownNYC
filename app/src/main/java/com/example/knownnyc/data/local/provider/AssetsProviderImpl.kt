@@ -5,9 +5,9 @@ import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class AssetProviderImpl @Inject constructor(
+class AssetsProviderImpl @Inject constructor(
     @ApplicationContext private val context: Context,
-) : AssetProvider {
+) : AssetsProvider {
     override suspend fun getJsonData(filename: String): String =
         context.assets.open(filename).bufferedReader().use {
             it.readText()
@@ -15,6 +15,6 @@ class AssetProviderImpl @Inject constructor(
 
 
     @SuppressLint("DiscouragedApi")
-    override suspend fun getDrawableResourceID(name: String): =
+    override suspend fun getDrawableResourceId(name: String) : Int =
         context.resources.getIdentifier(name, "drawable", context.packageName)
 }

@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.knownnyc.presentation.ui.navigation.AppNavigationGraph
 import com.example.knownnyc.presentation.ui.navigation.Routes
 import com.example.knownnyc.presentation.ui.theme.KnownNYCTheme
+import com.example.knownnyc.presentation.ui.util.AppEvents
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            AppEvents(context = this)
             KnownNYCTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {

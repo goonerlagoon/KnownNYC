@@ -1,8 +1,8 @@
 package com.example.knownnyc.data.local.provider
 
-interface AssetProvider {
+interface AssetsProvider {
 
     suspend fun getJsonData(filename: String) : String
-    suspend fun getDrawableResourceID(name: String) : String
+    suspend fun getDrawableResourceId(name: String) : Int
 
 }

@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.knownnyc.presentation.boroughs.BoroughScreen
 
 @Composable
 fun AppNavigationGraph() {
@@ -15,7 +16,11 @@ fun AppNavigationGraph() {
     NavHost(navController = navController, startDestination = Routes.HOME_SCREEN) {
 
         composable(Routes.HOME_SCREEN) {
-            Text(text = "hi")
+            BoroughScreen (onBoroughClicked = {borough, title ->
+
+                //TODO: Navigate to Parks Screen
+
+            })
         }
 
         composable(Routes.PARKS_SCREEN) {
