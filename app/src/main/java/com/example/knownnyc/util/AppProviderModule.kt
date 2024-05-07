@@ -1,7 +1,9 @@
 package com.example.knownnyc.util
 
-import com.example.knownnyc.data.local.provider.AssetProvider
+import com.example.knownnyc.data.local.provider.AssetsProvider
 import com.example.knownnyc.data.local.provider.AssetsProviderImpl
+import com.example.knownnyc.data.remote.repositories.NYCParksRepository
+import com.example.knownnyc.data.remote.repositories.NYCParksRepositoryImpl
 import com.example.knownnyc.domain.repositories.BoroughsRepository
 import com.example.knownnyc.domain.repositories.BoroughsRepositoryImpl
 import dagger.Binds
@@ -17,9 +19,13 @@ abstract class AppProviderModule {
     //Local Assets
     @Binds
     @Singleton
-    abstract fun localAssetsProvider(impl: AssetsProviderImpl) : AssetProvider
+    abstract fun localAssetsProvider(impl: AssetsProviderImpl) : AssetsProvider
 
     @Binds
     @Singleton
     abstract fun boroughRepositoryProvider(impl: BoroughsRepositoryImpl) : BoroughsRepository
+
+    @Binds
+    @Singleton
+    abstract fun nycParksRepositoryProvider(impl: NYCParksRepositoryImpl) : NYCParksRepository
 }

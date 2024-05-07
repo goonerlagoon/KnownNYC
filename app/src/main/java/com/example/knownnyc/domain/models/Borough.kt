@@ -7,4 +7,5 @@ data class Borough(
     val name: String,
     val longName: String,
     @DrawableRes val image: Int,
+    val location: String?
 )
