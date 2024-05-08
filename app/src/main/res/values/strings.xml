@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KnownNYC</string>
+    <string name="back">Back</string>
+    <string name="search">Search</string>
+    <string name="screen_title_home">NYC Parks by Borough</string>
+    <string name="screen_title_parks">%1$s Parks</string>
 </resources>

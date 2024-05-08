@@ -1,5 +1,7 @@
 package com.example.knownnyc.data.models
 
-// data class NycParkResponse()
+ data class NycParkResponse(
+    val REMOVE_ME: String,
+ )
 
 //TODO: Project 2

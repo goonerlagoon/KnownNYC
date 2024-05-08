@@ -13,7 +13,7 @@ import com.example.knownnyc.commons.TAG
 import com.example.knownnyc.presentation.ui.util.LoadingDialog
 
 @Composable
-fun BoroughScreen(
+fun BoroughsScreen(
     modifier: Modifier = Modifier,
     onBoroughClicked: (Char, String) -> Unit
 ) {
