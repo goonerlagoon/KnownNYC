@@ -1,4 +1,4 @@
-package com.example.knownnyc.util
+package com.example.knownyc.util
 
 import android.util.Log
 import com.example.knownnyc.commons.TAG
@@ -9,11 +9,12 @@ import com.example.knownnyc.data.remote.repositories.NYCParksRepositoryImpl
 import com.example.knownnyc.data.remote.repositories.NycOpenDataApiService
 import com.example.knownnyc.domain.repositories.BoroughsRepository
 import com.example.knownnyc.domain.repositories.BoroughsRepositoryImpl
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.example.knownnyc.util.AppConstants
+import com. jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
+import dagger.hilt. InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -21,27 +22,31 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(SingletonComponent:: class)
 abstract class AppProviderModule {
 
-    //Local Assets
+
+    // Local Assets
     @Binds
     @Singleton
-    abstract fun localAssetsProvider(impl: AssetsProviderImpl) : AssetsProvider
+    abstract fun localAssetsProvider(impl: AssetsProviderImpl): AssetsProvider
+
+    // Repositories
+    @Binds
+    @Singleton
+    abstract fun boroughsRepositoryProvider(impl: BoroughsRepositoryImpl): BoroughsRepository
+
 
     @Binds
     @Singleton
-    abstract fun boroughRepositoryProvider(impl: BoroughsRepositoryImpl) : BoroughsRepository
+    abstract fun nycParksRepositoryProvider(impl: NYCParksRepositoryImpl): NYCParksRepository
 
-    @Binds
-    @Singleton
-    abstract fun nycParksRepositoryProvider(impl: NYCParksRepositoryImpl) : NYCParksRepository
-
+    // API service
     companion object {
 
         @Singleton
         @Provides
-        fun nycOpenDataApiServiceProvider() : NycOpenDataApiService {
+        fun nycOpenDataApiServiceProvider(): NycOpenDataApiService {
             val json = Json {
                 ignoreUnknownKeys = true
             }

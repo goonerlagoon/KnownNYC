@@ -8,10 +8,10 @@ import com.example.knownnyc.commons.AppError
 import com.example.knownnyc.commons.Either
 import com.example.knownnyc.commons.TAG
 import com.example.knownnyc.data.local.provider.AssetsProvider
-import com.example.knownnyc.data.mappers.boroughsMapper
 import com.example.knownnyc.data.mappers.toError
 import com.example.knownnyc.domain.models.Borough
 import com.example.knownnyc.util.AppConstants
+import com.example.knownyc.data.mappers.boroughsMapper
 import org.json.JSONObject
 import java.lang.Exception
 import javax.inject.Inject

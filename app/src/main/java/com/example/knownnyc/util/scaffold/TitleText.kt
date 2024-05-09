@@ -31,4 +31,4 @@ fun TitleText(title: String, modifier: Modifier = Modifier) {
 @Composable
 fun TitleTextPreview() {
     TitleText(title = "Know NYC Parks")
-}
+}   

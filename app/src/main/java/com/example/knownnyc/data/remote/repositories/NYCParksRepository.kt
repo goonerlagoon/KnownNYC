@@ -1,6 +1,10 @@
 package com.example.knownnyc.data.remote.repositories
 
-interface NYCParksRepository {
+import com.example.knownnyc.commons.AppError
+import com.example.knownnyc.commons.Either
+import com.example.knownnyc.domain.models.Borough
+import com.example.knownnyc.domain.models.NycPark
 
-    //TODO: Project 2
+interface NYCParksRepository {
+    suspend fun getParks() : Either<AppError, List<NycPark>>
 }
