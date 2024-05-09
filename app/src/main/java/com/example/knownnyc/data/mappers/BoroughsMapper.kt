@@ -1,4 +1,4 @@
-package com.example.knownyc.data.mappers
+package com.example.knownnyc.data.mappers
 
 import com.example.knownnyc.data.local.provider.AssetsProvider
 import com.example.knownnyc.domain.models.Borough

@@ -1,4 +1,4 @@
-package com.example.knownyc.presentation.ui.navigation
+package com.example.knownnyc.presentation.ui.navigation
 
 import android.os.Bundle
 import android.util.Log
@@ -28,7 +28,7 @@ import com.example.knownnyc.R
 import com.example.knownnyc.presentation.boroughs.BoroughsScreen
 import com.example.knownnyc.presentation.ui.navigation.Routes
 import com.example.knownnyc.util.scaffold.AppScaffold
-import com.example.knownyc.presentation.ui.util.scaffold.TitleText
+import com.example.knownnyc.presentation.ui.util.scaffold.TitleText
 
 @Composable
 fun AppNavigationGraph() {

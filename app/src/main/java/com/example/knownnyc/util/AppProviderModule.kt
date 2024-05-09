@@ -1,4 +1,4 @@
-package com.example.knownyc.util
+package com.example.knownnyc.util
 
 import android.util.Log
 import com.example.knownnyc.commons.TAG

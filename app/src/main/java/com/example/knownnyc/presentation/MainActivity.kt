@@ -13,9 +13,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.knownnyc.presentation.ui.navigation.AppNavigationGraph
 import com.example.knownnyc.presentation.ui.theme.KnownNYCTheme
 import com.example.knownnyc.presentation.ui.util.AppEvents
-import com.example.knownyc.presentation.ui.navigation.AppNavigationGraph
 import dagger.hilt.android.AndroidEntryPoint
 
 

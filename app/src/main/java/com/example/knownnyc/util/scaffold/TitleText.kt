@@ -1,4 +1,4 @@
-package com.example.knownyc.presentation.ui.util.scaffold
+package com.example.knownnyc.presentation.ui.util.scaffold
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth

@@ -38,8 +38,7 @@ fun NycParkCard(
                 elevation = 6.dp,
                 spotColor = MaterialTheme.colorScheme.surfaceTint
             )
-            .border(width = 4.dp, color = Color.Gray,
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant))
+            .border(width = 4.dp, color = Color.Gray,)
             .requiredHeight(height)
             .clickable {
                 onClick()
@@ -86,7 +85,7 @@ fun NycParkCard(
 fun NycParkCardPreview() {
 
     val myPark = NycPark(
-        signname = Hunts,
+        signname = "Hunts",
         location = "lafayette",
         waterfront = false,
         url = ""

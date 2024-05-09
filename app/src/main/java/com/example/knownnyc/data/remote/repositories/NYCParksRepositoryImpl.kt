@@ -7,8 +7,9 @@ import com.example.knownnyc.commons.Either
 import com.example.knownnyc.data.mappers.parksMapper
 import com.example.knownnyc.data.mappers.toError
 import com.example.knownnyc.domain.models.NycPark
+import javax.inject.Inject
 
-class NYCParksRepositoryImpl(
+class NYCParksRepositoryImpl @Inject constructor(
     private val parkApi: NycOpenDataApiService
 ) : NycParksRepository {
 
