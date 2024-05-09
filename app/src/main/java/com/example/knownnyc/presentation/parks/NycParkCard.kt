@@ -1,3 +1,4 @@
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,16 +18,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.knownnyc.R
+import com.example.knownnyc.domain.models.NycPark
 
 
 @Composable
 fun NycParkCard(
-    name: String,
-    address: String,
+    park: NycPark,
     modifier: Modifier = Modifier,
     onClick: () -> Unit = {},
 ) {
 
+    val logo = painterResource(id = R.drawable.nyc_parks_logo)
+    val water = painterResource(id = R.drawable.waves_24px)
     val height = 148.dp
     Card(
         modifier = modifier
@@ -35,35 +38,39 @@ fun NycParkCard(
                 elevation = 6.dp,
                 spotColor = MaterialTheme.colorScheme.surfaceTint
             )
+            .border(width = 4.dp, color = Color.Gray,
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant))
             .requiredHeight(height)
             .clickable {
                 onClick()
             }
+
     ) {
         Row(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(20.dp)
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.nyc_parks_logo), 
+                painter = logo,
                 contentDescription = "Park Icon",
                 modifier = Modifier
                     .size(40.dp)
                     .weight(1f)
             )
+            Spacer(modifier = Modifier.width(6.dp))
             Column(
                 modifier = Modifier
                     .weight(5f)
                     .padding(start = 16.dp)
             ) {
                 Text(
-                    text = name,
+                    text = park.signname,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = address,
+                    text = park.location,
                     fontSize = 14.sp,
                     color = Color.Gray,
                     overflow = TextOverflow.Ellipsis
@@ -77,8 +84,12 @@ fun NycParkCard(
 @Preview
 @Composable
 fun NycParkCardPreview() {
-    NycParkCard(
-        name = "Hunts Point",
-        address = "Lafayette Av"
+
+    val myPark = NycPark(
+        signname = Hunts,
+        location = "lafayette",
+        waterfront = false,
+        url = ""
     )
+    NycParkCard(myPark)
 }

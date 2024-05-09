@@ -30,7 +30,6 @@ import com.example.knownnyc.presentation.ui.navigation.Routes
 import com.example.knownnyc.util.scaffold.AppScaffold
 import com.example.knownyc.presentation.ui.util.scaffold.TitleText
 
-
 @Composable
 fun AppNavigationGraph() {
 
@@ -80,9 +79,8 @@ fun AppNavigationGraph() {
     AppScaffold(
         title = {
             if (searchClicked.value) {
-                //TODO: Project 2
-                //SEARCHFIELD EXTRA CREDIT
-                //SearchTextField(placeholder = stringResource(id = R.string.search_parks_placeholder)) { value ->
+                // This is the TODO for SEARCHFIELD EXTRA CREDIT
+                // SearchTextField(placeholder = stringResource(id = R.string.search_parks_placeholder)) { value ->
                 //  searchText.value = value
                 // }
             } else {
@@ -125,4 +123,6 @@ fun AppNavigationGraph() {
         }
     }
 }
+
+
 

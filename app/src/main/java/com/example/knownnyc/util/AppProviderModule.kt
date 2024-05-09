@@ -4,13 +4,12 @@ import android.util.Log
 import com.example.knownnyc.commons.TAG
 import com.example.knownnyc.data.local.provider.AssetsProvider
 import com.example.knownnyc.data.local.provider.AssetsProviderImpl
-import com.example.knownnyc.data.remote.repositories.NycParksRepository
 import com.example.knownnyc.data.remote.repositories.NYCParksRepositoryImpl
 import com.example.knownnyc.data.remote.repositories.NycOpenDataApiService
+import com.example.knownnyc.data.remote.repositories.NycParksRepository
 import com.example.knownnyc.domain.repositories.BoroughsRepository
 import com.example.knownnyc.domain.repositories.BoroughsRepositoryImpl
 import com.example.knownnyc.util.AppConstants
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com. jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Binds
 import dagger.Module

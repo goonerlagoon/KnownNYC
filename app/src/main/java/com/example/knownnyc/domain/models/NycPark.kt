@@ -8,6 +8,3 @@ data class NycPark(
     val url: String,
 
 )
-
-//TODO: Project 2
-//this model represents the data from a database

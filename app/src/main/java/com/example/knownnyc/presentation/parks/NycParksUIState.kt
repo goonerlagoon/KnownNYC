@@ -7,7 +7,7 @@ import com.example.knownnyc.domain.models.NycPark
 data class NycParksUIState(
 
     val isLoading: Boolean = false,
-    val boroughs: List<NycPark> = emptyList(),
+    val parks: List<NycPark> = emptyList(),
     val error: AppError? = null,
 
 )
