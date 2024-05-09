@@ -2,9 +2,11 @@ package com.example.knownnyc.domain.models
 
 data class NycPark(
 
-val boroCode: Char,
-    val name: String,
-    val addresss: String,
+    val signname: String,
+    val location: String,
+    val waterfront: Boolean = false,
+    val url: String,
+
 )
 
 //TODO: Project 2

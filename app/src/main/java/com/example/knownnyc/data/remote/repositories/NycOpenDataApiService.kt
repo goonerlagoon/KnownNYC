@@ -1,7 +1,6 @@
 package com.example.knownnyc.data.remote.repositories
 
 import com.example.knownnyc.data.models.NycParkResponse
-import com.example.knownnyc.domain.models.Borough
 import retrofit2.http.GET
 import retrofit2.http.Query
 

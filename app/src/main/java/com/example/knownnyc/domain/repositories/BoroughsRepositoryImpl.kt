@@ -20,15 +20,14 @@ class BoroughsRepositoryImpl @Inject constructor(private val localAssetProvider:
     ) : BoroughsRepository {
 
 
-    private suspend fun loadJsonAndMapData() : List<Borough> {
-          val json = loadJson()
-          return boroughsMapper(json, localAssetProvider)
-    }
-
-
     private suspend fun loadJson() : JSONObject {
         val jsonString = localAssetProvider.getJsonData(AppConstants.BOROUGHS_JSON)
         return JSONObject(jsonString)
+    }
+
+    private suspend fun loadJsonAndMapData() : List<Borough> {
+          val json = loadJson()
+          return boroughsMapper(json, localAssetProvider)
     }
 
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)

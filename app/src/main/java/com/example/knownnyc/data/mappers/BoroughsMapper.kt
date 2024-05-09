@@ -12,9 +12,9 @@ suspend fun boroughsMapper(
     localAssetsProvider: AssetsProvider,
 ): List<Borough> {
 
-    val jsonArray:JSONArray = jsonObj.getJSONArray("boroughs")
+    val jsonArray: JSONArray = jsonObj.getJSONArray("boroughs")
 
-    val boroughs:MutableList<Borough> = mutableListOf<Borough>()
+    val boroughs: MutableList<Borough> = mutableListOf()
 
     for (i: Int in 0 until jsonArray.length()) {
         val obj: JSONObject = jsonArray.getJSONObject(i)

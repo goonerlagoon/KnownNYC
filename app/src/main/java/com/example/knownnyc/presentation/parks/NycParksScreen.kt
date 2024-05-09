@@ -21,14 +21,14 @@ fun NycParksScreen(
     onParkClicked: (Char, String) -> Unit
 ) {
 
-    val viewModel : BoroughViewModel = hiltViewModel()
+    val viewModel : NycParksViewModel = hiltViewModel()
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     LoadingDialog(isLoading = state.isLoading)
     LazyColumn (
         modifier = modifier
     ) {
-        items(state.boroughs) { borough ->
+        items(state.parks) { borough ->
             BoroughCard(
                 name = borough.name,
                 painter = painterResource(id = borough.image),

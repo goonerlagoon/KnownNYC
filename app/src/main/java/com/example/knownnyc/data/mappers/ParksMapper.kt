@@ -1,6 +1,7 @@
 package com.example.knownnyc.data.mappers
 
 import com.example.knownnyc.data.local.provider.AssetsProvider
+import com.example.knownnyc.data.models.NycParkResponse
 import com.example.knownnyc.domain.models.Borough
 import com.example.knownnyc.domain.models.NycPark
 import org.json.JSONArray
@@ -8,26 +9,21 @@ import org.json.JSONObject
 
 //TODO: Project 2
 
-suspend fun ParksMapper(
-    jsonObj: JSONObject,
-    localAssetsProvider: AssetsProvider,
-): List<NycPark> {
+suspend fun ParksMapper(parkslist: List<NycParkResponse>): List<NycPark> {
 
-    val jsonArray: JSONArray = jsonObj.getJSONArray("boroughs")
+    return parkslist.filter {
 
-    val boroughs:MutableList<Borough> = mutableListOf<Borough>()
+        !it.signname.isNullOrEmpty() &&
+                it.location != null && it.location.isNotEmpty() &&
+                it.url != null && it.url.isNotEmpty()
+    }.map { validResponse ->
 
-    for (i: Int in 0 until jsonArray.length()) {
-        val obj: JSONObject = jsonArray.getJSONObject(i)
-        val borough = Borough(
-            boroCode = obj.getString("borough").first(),
-            name = obj.getString("shortName"),
-            longName = obj.getString("fullName"),
-            image = localAssetsProvider.getDrawableResourceId(obj.getString("imageFilename")),
-            null
+        NycPark(
+            signname = validResponse.signname!!,
+            location = validResponse.location!!,
+            waterfront = validResponse.waterfront,
+            url = validResponse.url!!
         )
-        boroughs.add(borough)
     }
 
-    return boroughs
 }
