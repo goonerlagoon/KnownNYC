@@ -1,6 +1,9 @@
 package com.example.knownnyc.data.models
 
- data class NycParkResponse(
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class NycParkResponse(
     val signname: String?,
     val location: String?,
     val waterfront: Boolean = false,

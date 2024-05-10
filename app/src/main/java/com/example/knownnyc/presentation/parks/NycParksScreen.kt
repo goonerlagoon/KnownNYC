@@ -18,7 +18,7 @@ import com.example.knownnyc.domain.models.NycPark
 import com.example.knownnyc.presentation.ui.util.LoadingDialog
 
 @Composable
-fun NycParksScreen(boroCode: Char,
+fun NycParksScreen(boroCode: String,
                    modifier: Modifier = Modifier,
                    onParkClicked: (String) -> Unit = {},
 ) {

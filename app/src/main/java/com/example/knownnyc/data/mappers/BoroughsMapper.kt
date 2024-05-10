@@ -8,7 +8,8 @@ import org.json.JSONObject
 // map JSON to Borough data class
 
 suspend fun boroughsMapper(
-    jsonObj: JSONObject,
+    jsonObj: JSONObject
+    ,
     localAssetsProvider: AssetsProvider,
 ): List<Borough> {
 

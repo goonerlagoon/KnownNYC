@@ -27,7 +27,7 @@ class NycParksViewModel @Inject constructor(
 //        getPark()
 //    }
 
-     fun loadParksForBorough(boroCode: Char) {
+     fun loadParksForBorough(boroCode: String) {
         viewModelScope.launch {
             _state.update {
                 it.copy(

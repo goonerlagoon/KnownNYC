@@ -2,11 +2,13 @@ package com.example.knownnyc.data.mappers
 
 import com.example.knownnyc.data.models.NycParkResponse
 import com.example.knownnyc.domain.models.NycPark
+import org.json.JSONArray
+import org.json.JSONObject
 
 
-//TODO: Project 2
+//TODO: Project
 
-fun parksMapper(parksList: List<NycParkResponse>): List<NycPark> {
+suspend fun parksMapper(parksList: List<NycParkResponse>): List<NycPark> {
 
     val validParks = mutableListOf<NycPark>()
 

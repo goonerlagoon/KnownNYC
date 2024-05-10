@@ -7,6 +7,6 @@ import com.example.knownnyc.domain.models.Borough
 import com.example.knownnyc.domain.models.NycPark
 
 interface NycParksRepository {
-    suspend fun getParks(boroCode: Char): Either<AppError, List<NycPark>>
+    suspend fun getParks(borough: String): Either<AppError, List<NycPark>>
 }
 

@@ -9,12 +9,11 @@ import com.example.knownnyc.data.remote.repositories.NycOpenDataApiService
 import com.example.knownnyc.data.remote.repositories.NycParksRepository
 import com.example.knownnyc.domain.repositories.BoroughsRepository
 import com.example.knownnyc.domain.repositories.BoroughsRepositoryImpl
-import com.example.knownnyc.util.AppConstants
-import com. jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import dagger.hilt. InstallIn
+import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType

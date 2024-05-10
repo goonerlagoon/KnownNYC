@@ -103,7 +103,7 @@ fun AppNavigationGraph() {
                 composable(Routes.HOME_SCREEN) {
                     BoroughsScreen(onBoroughClicked = { borough, title ->
                         titleArgs.value = title
-                        navController.navigate(Routes.PARKS_SCREEN + "?borough=${borough}")
+                        navController.navigate(Routes.PARKS_SCREEN + "?borough=$borough")
                     })
                 }
                 composable(
@@ -116,7 +116,7 @@ fun AppNavigationGraph() {
                 ) { backStackEntry: NavBackStackEntry ->
                     // TODO: PROJECT 2 add PARKSCREEN HERE
                     NycParksScreen(
-                      boroCode = 'X',
+                      boroCode = "M",
 //                     searchText = searchText.value
                     )
                 }
