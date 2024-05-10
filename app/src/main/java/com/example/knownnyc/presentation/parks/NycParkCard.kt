@@ -8,6 +8,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -47,7 +48,8 @@ fun NycParkCard(
     ) {
         Row(
             modifier = Modifier
-                .padding(20.dp)
+                .padding(20.dp),
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
                 painter = logo,
@@ -85,8 +87,8 @@ fun NycParkCard(
 fun NycParkCardPreview() {
 
     val myPark = NycPark(
-        signname = "Hunts",
-        location = "lafayette",
+        signname = "Hunts gqergeergeqrg",
+        location = "lafayette ergeqrgerg",
         waterfront = false,
         url = ""
     )

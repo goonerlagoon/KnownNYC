@@ -8,17 +8,20 @@ import com.example.knownnyc.domain.models.NycPark
 
 fun parksMapper(parksList: List<NycParkResponse>): List<NycPark> {
 
-    return parksList.filter {
+    val validParks = mutableListOf<NycPark>()
 
-        !it.signname.isNullOrEmpty() && !it.location.isNullOrEmpty() && !it.url.isNullOrEmpty()
-    }.map { validResponse ->
+    parksList.forEach { park ->
+        if (!park.signname.isNullOrEmpty() && !park.location.isNullOrEmpty() && !park.url.isNullOrEmpty()) {
+            val park = NycPark(
+                signname = park.signname,
+                location = park.location,
+                waterfront = park.waterfront,
+                url = park.url
+            )
 
-        NycPark(
-            signname = validResponse.signname!!,
-            location = validResponse.location!!,
-            waterfront = validResponse.waterfront,
-            url = validResponse.url!!
-        )
+            validParks.add(park)
+        }
     }
 
+    return validParks
 }
