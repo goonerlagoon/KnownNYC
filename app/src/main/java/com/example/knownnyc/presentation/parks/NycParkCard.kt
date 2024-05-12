@@ -1,9 +1,9 @@
+package com.example.knownnyc.presentation.parks
+
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -39,7 +39,7 @@ fun NycParkCard(
                 elevation = 6.dp,
                 spotColor = MaterialTheme.colorScheme.surfaceTint
             )
-            .border(width = 4.dp, color = Color.Gray,)
+            .border(width = 4.dp, color = Color.Gray)
             .requiredHeight(height)
             .clickable {
                 onClick()

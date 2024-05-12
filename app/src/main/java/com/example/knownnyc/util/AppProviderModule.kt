@@ -48,7 +48,9 @@ abstract class AppProviderModule {
         fun nycOpenDataApiServiceProvider(): NycOpenDataApiService {
             val json = Json {
                 ignoreUnknownKeys = true
+                coerceInputValues = true
             }
+
 
             Log.d(TAG, "building NYC Open Data API service provider")
 

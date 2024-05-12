@@ -18,7 +18,7 @@ class NYCParksRepositoryImpl @Inject constructor(
     override suspend fun getParks(borough: String): Either<AppError, List<NycPark>> {
          return try {
 
-            val rawData = parkApi.getNycParks(borough, false)
+            val rawData = parkApi.getNycParks(borough)
             val mappedParks = parksMapper(rawData)
 
 

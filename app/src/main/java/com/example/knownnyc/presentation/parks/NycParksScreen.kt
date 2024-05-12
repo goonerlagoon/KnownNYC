@@ -1,6 +1,5 @@
 package com.example.knownnyc.presentation.parks
 
-import NycParkCard
 import android.util.Log
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
