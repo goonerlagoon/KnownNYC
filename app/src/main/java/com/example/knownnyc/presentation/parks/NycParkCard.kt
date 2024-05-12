@@ -1,5 +1,8 @@
 package com.example.knownnyc.presentation.parks
 
+import android.content.Context
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -32,6 +36,10 @@ fun NycParkCard(
     val logo = painterResource(id = R.drawable.nyc_parks_logo)
     val water = painterResource(id = R.drawable.waves_24px)
     val height = 148.dp
+
+    val mintGreen = Color(0xFF98FF98)
+    val leafGreen = Color(0xFF4CAF50)
+
     Card(
         modifier = modifier
             .padding(6.dp)
@@ -39,18 +47,21 @@ fun NycParkCard(
                 elevation = 6.dp,
                 spotColor = MaterialTheme.colorScheme.surfaceTint
             )
-            .border(width = 4.dp, color = Color.Gray)
+            .background(color = mintGreen)
+//            .border(width = 4.dp, color = leafGreen)
+            .padding(0.dp)
             .requiredHeight(height)
-            .clickable {
-                onClick()
-            }
+            .clickable(onClick = onClick),
 
     ) {
         Row(
             modifier = Modifier
-                .padding(20.dp),
+                .padding(20.dp)
+                .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-        ) {
+            horizontalArrangement = Arrangement.Center,
+
+            ) {
             Icon(
                 painter = logo,
                 contentDescription = "Park Icon",
@@ -62,13 +73,13 @@ fun NycParkCard(
             Column(
                 modifier = Modifier
                     .weight(5f)
-                    .padding(start = 16.dp)
+                    .padding(start = 16.dp),
             ) {
                 Text(
                     text = park.signname,
+                    overflow = TextOverflow.Ellipsis,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp,
-                    overflow = TextOverflow.Ellipsis
                 )
                 Text(
                     text = park.location,
@@ -77,10 +88,22 @@ fun NycParkCard(
                     overflow = TextOverflow.Ellipsis
                 )
             }
+
+            if (park.waterfront) {
+
+                Spacer(modifier = Modifier.width(8.dp))
+
+                Image(
+                    painter = water,
+                    contentDescription = "water park",
+                    modifier = Modifier.align(Alignment.Top)
+                        .background(color = Color.Cyan)
+                        .size(24.dp)
+                )
+            }
         }
     }
 }
-
 
 @Preview
 @Composable
@@ -89,7 +112,7 @@ fun NycParkCardPreview() {
     val myPark = NycPark(
         signname = "Hunts gqergeergeqrg",
         location = "lafayette ergeqrgerg",
-        waterfront = false,
+        waterfront = true,
         url = ""
     )
     NycParkCard(myPark)

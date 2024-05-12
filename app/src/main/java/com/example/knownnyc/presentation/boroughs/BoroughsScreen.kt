@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -21,7 +22,10 @@ fun BoroughsScreen(
   val viewModel : BoroughViewModel = hiltViewModel()
   val state by viewModel.state.collectAsStateWithLifecycle()
 
-  LoadingDialog(isLoading = state.isLoading)
+  val context = LocalContext.current
+
+
+    LoadingDialog(isLoading = state.isLoading)
   LazyColumn (
         modifier = modifier
   ) {
