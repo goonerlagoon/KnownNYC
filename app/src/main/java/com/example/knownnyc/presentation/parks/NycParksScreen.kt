@@ -97,7 +97,3 @@ fun WebViewScreen(url: String, modifier: Modifier = Modifier) {
 //        context.startActivity(intent)
 //    }
 //}
-
-
-
-//TODO: Project 2

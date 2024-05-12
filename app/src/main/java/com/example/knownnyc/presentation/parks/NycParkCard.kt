@@ -35,7 +35,7 @@ fun NycParkCard(
 
     val logo = painterResource(id = R.drawable.nyc_parks_logo)
     val water = painterResource(id = R.drawable.waves_24px)
-    val height = 148.dp
+    val height = 150.dp
 
     val mintGreen = Color(0xFF98FF98)
     val leafGreen = Color(0xFF4CAF50)
@@ -48,15 +48,14 @@ fun NycParkCard(
                 spotColor = MaterialTheme.colorScheme.surfaceTint
             )
             .background(color = mintGreen)
-//            .border(width = 4.dp, color = leafGreen)
-            .padding(0.dp)
+            .border(width = 6.dp, color = leafGreen)
             .requiredHeight(height)
             .clickable(onClick = onClick),
 
     ) {
         Row(
             modifier = Modifier
-                .padding(20.dp)
+                .padding(30.dp)
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
@@ -66,7 +65,7 @@ fun NycParkCard(
                 painter = logo,
                 contentDescription = "Park Icon",
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(60.dp)
                     .weight(1f)
             )
             Spacer(modifier = Modifier.width(6.dp))
@@ -97,7 +96,7 @@ fun NycParkCard(
                     painter = water,
                     contentDescription = "water park",
                     modifier = Modifier.align(Alignment.Top)
-                        .background(color = Color.Cyan)
+                        .background(color = Color.Blue)
                         .size(24.dp)
                 )
             }
