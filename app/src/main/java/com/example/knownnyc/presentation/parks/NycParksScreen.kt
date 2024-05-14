@@ -1,10 +1,6 @@
 package com.example.knownnyc.presentation.parks
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
-import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,21 +12,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Dialog
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.knownnyc.commons.TAG
-import com.example.knownnyc.domain.models.NycPark
 import com.example.knownnyc.presentation.ui.util.LoadingDialog
 
+
 @Composable
-fun NycParksScreen(boroCode: String,
-                   modifier: Modifier = Modifier,
-                   onParkClicked: (String) -> Unit = {},
-) {
+fun NycParksScreen(boroCode: String) {
 
     val viewModel : NycParksViewModel = hiltViewModel()
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -38,25 +28,19 @@ fun NycParksScreen(boroCode: String,
     val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
     val (currentUrl, setCurrentUrl) = remember { mutableStateOf("") }
 
-//    val context = LocalContext.current
-
-    LoadingDialog(isLoading = state.isLoading)
-
-    LaunchedEffect(key1 = boroCode) {
+    LaunchedEffect(key1 = boroCode ) {
         viewModel.loadParksForBorough(boroCode)
     }
 
+    LoadingDialog(isLoading = state.isLoading)
 
-    LazyColumn (
-        modifier = modifier
-    ) {
+    LazyColumn {
         items(state.parks) { park ->
             NycParkCard(park = park, onClick = {
 //              openUrl(context, park.url)
                 setCurrentUrl(park.url)
                 setShowDialog(true)
             })
-
         }
       }
 
@@ -66,7 +50,6 @@ fun NycParksScreen(boroCode: String,
         }
     }
 }
-
 
 @Composable
 fun WebViewDialog(url: String, onDismiss: () -> Unit) {
@@ -89,11 +72,3 @@ fun WebViewScreen(url: String, modifier: Modifier = Modifier) {
         }
     )
 }
-
-
-//fun openUrl(context: Context, url: String?) {
-//    if (!url.isNullOrEmpty()) {
-//        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-//        context.startActivity(intent)
-//    }
-//}

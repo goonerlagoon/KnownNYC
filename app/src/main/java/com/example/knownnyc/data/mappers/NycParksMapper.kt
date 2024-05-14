@@ -2,28 +2,26 @@ package com.example.knownnyc.data.mappers
 
 import com.example.knownnyc.data.models.NycParkResponse
 import com.example.knownnyc.domain.models.NycPark
-import org.json.JSONArray
-import org.json.JSONObject
 
 
 //TODO: Project
 
-suspend fun parksMapper(parksList: List<NycParkResponse>): List<NycPark> {
+fun nycParksMapper(parksList: List<NycParkResponse>): List<NycPark> {
 
-    val validParks = mutableListOf<NycPark>()
+    val filteredParks = mutableListOf<NycPark>()
 
     parksList.forEach { park ->
         if (!park.signname.isNullOrEmpty() && !park.location.isNullOrEmpty() && !park.url.isNullOrEmpty()) {
-            val park = NycPark(
+            val eachPark = NycPark(
                 signname = park.signname,
                 location = park.location,
                 waterfront = park.waterfront,
                 url = park.url
             )
 
-            validParks.add(park)
+            filteredParks.add(eachPark)
         }
     }
 
-    return validParks
+    return filteredParks
 }

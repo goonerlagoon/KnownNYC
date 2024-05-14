@@ -6,7 +6,7 @@ import androidx.annotation.RequiresExtension
 import com.example.knownnyc.commons.AppError
 import com.example.knownnyc.commons.Either
 import com.example.knownnyc.commons.TAG
-import com.example.knownnyc.data.mappers.parksMapper
+import com.example.knownnyc.data.mappers.nycParksMapper
 import com.example.knownnyc.domain.models.NycPark
 import javax.inject.Inject
 
@@ -19,7 +19,7 @@ class NYCParksRepositoryImpl @Inject constructor(
          return try {
 
             val rawData = parkApi.getNycParks(borough)
-            val mappedParks = parksMapper(rawData)
+            val mappedParks = nycParksMapper(rawData)
 
 
 //            Log.d(TAG, "this is response: $response")

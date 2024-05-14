@@ -1,7 +1,6 @@
 package com.example.knownnyc.presentation.parks
 
 import com.example.knownnyc.commons.AppError
-import com.example.knownnyc.domain.models.Borough
 import com.example.knownnyc.domain.models.NycPark
 
 data class NycParksUIState(

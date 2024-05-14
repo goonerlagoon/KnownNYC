@@ -1,11 +1,9 @@
 package com.example.knownnyc.presentation.parks
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.knownnyc.commons.Either
 import com.example.knownnyc.commons.Event
-import com.example.knownnyc.commons.TAG
 import com.example.knownnyc.commons.sendEvent
 import com.example.knownnyc.data.remote.repositories.NycParksRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,15 +17,11 @@ import javax.inject.Inject
 class NycParksViewModel @Inject constructor(
     private val repository: NycParksRepository
 ) : ViewModel() {
+
     private val _state = MutableStateFlow(NycParksUIState())
     val state = _state.asStateFlow()
 
-//    init {
-//        Log.d(TAG, "ViewModel init getting parks")
-//        getPark()
-//    }
-
-     fun loadParksForBorough(boroCode: String) {
+    fun loadParksForBorough(boroCode: String) {
         viewModelScope.launch {
             _state.update {
                 it.copy(
